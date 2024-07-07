@@ -2,7 +2,7 @@ import { Model } from 'mongoose';
 import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { User } from './users.schema';
-import { CreateUserDto } from './users.dto';
+import { CreateUserDto } from './users.constants';
 
 @Injectable()
 export class UsersService {

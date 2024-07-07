@@ -12,3 +12,9 @@ export class GetUserParam {
     @IsEmail()
     readonly email: string;
 }
+
+export enum UserRole {
+    GUEST = 'guest',
+    STUDENT = 'student',
+    INSTRUCTOR = 'instructor',
+}
