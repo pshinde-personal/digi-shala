@@ -4,34 +4,25 @@ import { UserRole } from './users.constants';
 
 @Schema()
 export class User extends Document {
-  @Prop({ required: true, max: 30 })
-  first_name: string;
-  
-  @Prop({ required: true, max: 30 })
-  last_name: string;
-
-  @Prop({ required: true,  })
+  @Prop({ required: true, maxlength: 60 })
   name: string;
 
   @Prop({ required: true, unique: true, maxlength: 50, index: true })
   username: string;
 
-  @Prop({ required: true, unique: true })
+  @Prop({ unique: true })
   email: string;
 
-  @Prop({ required: true })
-  password: string;
-
-  @Prop({ required: true })
+  @Prop({ required: true, select: false })
   passwordHash: string;
   
-  @Prop({ required: true, length: 10, unique: true, index: true })
+  @Prop({ length: 10, unique: true, index: true })
   phoneNumber: string;
 
   @Prop({ required: true, index: true })
   isVerified: boolean;
 
-  @Prop({ required: true, enum: UserRole, default: UserRole.GUEST })
+  @Prop({ enum: UserRole, default: UserRole.GUEST })
   role: string; 
 
   @Prop({ default: Date.now })

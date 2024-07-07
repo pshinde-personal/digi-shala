@@ -6,10 +6,10 @@ import { UsersService } from './users.service';
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Get(':email?')
+  @Get(':username?')
   async get(@Param() getUserParam: GetUserParam) {
-    if (getUserParam?.email) {
-      return this.usersService.findOne(getUserParam.email)
+    if (getUserParam?.username) {
+      return this.usersService.findOne(getUserParam.username)
     }
     return this.usersService.findAll()
   }
