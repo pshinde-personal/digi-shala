@@ -1,4 +1,3 @@
-Certainly! Below is a README.md file for the Digi-Shala backend API based on the provided information.
 
 ```markdown
 # Digi-Shala Backend API
