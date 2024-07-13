@@ -2,14 +2,14 @@ import { Controller, Post, Body, Get, Param } from '@nestjs/common';
 import { CreateUserDto, GetUserParam } from './users.constants';
 import { UsersService } from './users.service';
 
-@Controller('user')
+@Controller('users')
 export class UsersController {
   constructor(private readonly usersService: UsersService) {}
 
-  @Get(':username?')
+  @Get(':email?')
   async get(@Param() getUserParam: GetUserParam) {
-    if (getUserParam?.username) {
-      return this.usersService.findOne(getUserParam.username)
+    if (getUserParam?.email) {
+      return this.usersService.findOne(getUserParam.email)
     }
     return this.usersService.findAll()
   }

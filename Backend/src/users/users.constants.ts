@@ -30,5 +30,6 @@ export class CreateUserDto {
 export class GetUserParam {
     @IsOptional()
     @IsString()
-    readonly username: string;
+    @IsEmail()
+    readonly email: string;
 }

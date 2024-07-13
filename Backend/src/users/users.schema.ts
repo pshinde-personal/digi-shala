@@ -16,7 +16,7 @@ export class User extends Document {
   @Prop({ required: true, select: false })
   passwordHash: string;
   
-  @Prop({ length: 10, unique: true, index: true })
+  @Prop()
   phoneNumber: string;
 
   @Prop({ required: true, index: true })
